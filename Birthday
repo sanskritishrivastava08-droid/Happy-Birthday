@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Happy Birthday ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            overflow-x: hidden;
+            background: #1e1a2f;
+        }
+
+        .hidden { display: none !important; }
+
+        button {
+            padding: 14px 25px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 15px;
+        }
+
+        button:hover { transform: scale(1.05); }
+
+        #loginPage {
+            height: 100vh;
+            background:
+                linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)),
+                url('login.jpeg') center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: rgba(75,63,114,0.95);
+            padding: 50px;
+            border-radius: 25px;
+            text-align: center;
+            color: white;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        input {
+            padding: 12px;
+            width: 85%;
+            border-radius: 12px;
+            border: none;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        #sideChickPage { height: 100vh; display: flex; }
+
+        .left-side { width: 50%; }
+        .left-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .right-side {
+            width: 50%;
+            background: #3a2d5c;
+            color: #f3e8ff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+        }
+
+        .reason-hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .reason-hero h2 { font-size: 28px; opacity: 0.8; }
+        .reason-hero h1 { font-size: 60px; font-weight: 900; }
+
+        .reason-content { padding: 100px 20px; text-align: center; }
+
+        .reason-box {
+            max-width: 850px;
+            margin: auto;
+            padding: 50px;
+            border-radius: 20px;
+            line-height: 1.8;
+        }
+
+        .funny-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)),
+            url('1.jpeg') center/cover no-repeat;
+        }
+
+        .bandar-hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.8)),
+            url('5.jpeg') center/cover no-repeat;
+        }
+
+        .obsessed-hero {
+            background: linear-gradient(rgba(80,0,40,0.6), rgba(20,0,20,0.9)),
+            url('3.jpeg') center/cover no-repeat;
+        }
+
+        .know-hero {
+            background: linear-gradient(rgba(10,20,40,0.7), rgba(5,10,25,0.9)),
+            url('know.jpg') center/cover no-repeat;
+        }
+
+        .love-hero {
+            background: linear-gradient(rgba(10,0,10,0.85), rgba(0,0,0,0.95)),
+            url('4.jpeg') center/cover no-repeat;
+        }
+
+        .funny-content { background: #2c2445; color: #f3e8ff; }
+        .bandar-content { background: #e8d8c3; color: #3b2a1a; }
+        .obsessed-content { background: #2b0a2b; color: #ffe4f2; }
+        .know-content { background: #0f172a; color: #e2e8f0; }
+        .love-content { background: #111; color: #ffe4f2; }
+
+        .reason-buttons { margin-top: 40px; }
+        .reason-buttons button { width: 260px; margin: 15px; }
+
+    </style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div id="loginPage">
+    <div class="container">
+        <h1>Happy Birthday, Love ❤️</h1>
+        <p>Enter password to know the deepest secrets of my heart 💗</p>
+        <input type="password" id="password" placeholder="Enter Password">
+        <br><br>
+        <button onclick="checkPassword()">Unlock 💖</button>
+        <p style="font-size:14px;">
+            Hint: it's your birthday in DDMM 🎂
+        </p>
+    </div>
+</div>
+
+<!-- PAGE 1 -->
+<div id="sideChickPage" class="hidden">
+    <div class="left-side">
+        <img src="2.jpeg">
+    </div>
+    <div class="right-side">
+        <h1>Happiest Birthday to my absolute favourite person ❤️</h1>
+        <h2>I don’t just love you… I’m completely, hopelessly in love with you (fasa liya na 😌)</h2>
+
+        <button onclick="chooseMe()">You're the only one I want ❤️</button>
+        <button onclick="wrongAnswer()">Are you sure? 😏</button>
+    </div>
+</div>
+
+<!-- STORY -->
+<div id="reason1" class="hidden">
+    <section class="reason-hero funny-hero">
+        <h2>The day it all started…</h2>
+        <h1>OUR STORY ❤️</h1>
+    </section>
+
+    <section class="reason-content funny-content">
+        <div class="reason-box">
+
+            <p>Ohhhh how I still remember the first day we met… kya hi crazy din tha...</p>
+
+            <p>We talked for 4 days and then you ghosted me 😤 but then you came back...</p>
+
+            <p>Maine to bata diya… now you tell me?</p>
+
+            <div class="reason-buttons">
+                <button onclick="goToReason2()">The best day ever ❤️</button>
+                <button onclick="wrongFirstMeet()">Just another boring day 😒</button>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+<!-- FEELINGS -->
+<div id="reason2" class="hidden">
+    <section class="reason-hero bandar-hero">
+        <h1>You Changed Everything ❤️</h1>
+    </section>
+
+    <section class="reason-content bandar-content">
+        <div class="reason-box">
+
+            <p>Life feels lighter… more complete.</p>
+
+            <p>Tum reh sakte ho kya mere bina?</p>
+
+            <div class="reason-buttons">
+                <button onclick="wrongWithoutMe()">Yes 😌</button>
+                <button onclick="goToReason3()">No ❤️</button>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+<!-- LOVE -->
+<div id="reason3" class="hidden">
+    <section class="reason-hero obsessed-hero">
+        <h1>Everything I Love About You ❤️</h1>
+    </section>
+
+    <section class="reason-content obsessed-content">
+        <div class="reason-box">
+
+            <p>You make me feel safe, valued, loved.</p>
+
+            <p>Why are you so lucky?</p>
+
+            <div class="reason-buttons">
+                <button onclick="wrongLucky()">Tum acche ho</button>
+                <button onclick="goToReason4()">Main tumhari gf hoon 😏</button>
+            </div>
+
+        </div>
+    </section>
+</div>
+
+<!-- FINAL -->
+<div id="reason5" class="hidden">
+    <section class="reason-hero love-hero">
+        <h1>Us. Always ❤️</h1>
+    </section>
+
+    <section class="reason-content love-content">
+        <div class="reason-box">
+
+            <p>2 years with you… imperfect, but us.</p>
+
+            <p>Happy Birthday ❤️ I love you always.</p>
+
+        </div>
+    </section>
+</div>
+
+<script>
+
+function checkPassword() {
+    if (document.getElementById("password").value === "0201") {
+        document.getElementById("loginPage").classList.add("hidden");
+        document.getElementById("sideChickPage").classList.remove("hidden");
+    } else {
+        alert("Wrong 😤");
+    }
+}
+
+function chooseMe() {
+    document.getElementById("sideChickPage").classList.add("hidden");
+    document.getElementById("reason1").classList.remove("hidden");
+}
+
+function wrongAnswer() {
+    alert("Choose correctly 😏❤️");
+}
+
+function goToReason2() {
+    document.getElementById("reason1").classList.add("hidden");
+    document.getElementById("reason2").classList.remove("hidden");
+}
+
+function goToReason3() {
+    document.getElementById("reason2").classList.add("hidden");
+    document.getElementById("reason3").classList.remove("hidden");
+}
+
+function wrongFirstMeet() {
+    alert("Dobara socho 😤");
+}
+
+function wrongWithoutMe() {
+    alert("Sach bolo 😏");
+}
+
+function wrongLucky() {
+    alert("Correct answer choose karo 😤");
+}
+
+</script>
+
+</body>
+</html>
